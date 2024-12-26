@@ -1,6 +1,7 @@
-﻿^#Right::
+﻿^#Left::
+^#Right::
 {
-    SendInput("{Ctrl Down}{LWin Down}{Right}{LWin Up}{Ctrl Up}")
+    SendVirtualDesktopSwitch(A_ThisHotkey)
 
     Sleep 1000
 
@@ -24,4 +25,12 @@
 
         startX += xStep
     }
+}
+
+SendVirtualDesktopSwitch(hotkey)
+{
+    if (hotkey = "^#Left")
+        SendInput("{Ctrl Down}{LWin Down}{Left}{LWin Up}{Ctrl Up}")
+    else if (hotkey = "^#Right")
+        SendInput("{Ctrl Down}{LWin Down}{Right}{LWin Up}{Ctrl Up}")
 }
